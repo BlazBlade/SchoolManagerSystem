@@ -1,0 +1,33 @@
+spring:
+  mvc:
+    pathmatch:
+      matching-strategy: ant_path_matcher
+  datasource:
+    type: com.zaxxer.hikari.HikariDataSource
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/school_manager_system?characterEncoding=utf-8&userSSL=false&serverTimezone=Asia/Shanghai
+
+    username: root
+    password: 123456
+
+    hikari:
+      connection-test-query: SELECT 1
+      connection-timeout: 60000
+      idle-timeout: 500000
+      max-lifetime: 540000
+      maximum-pool-size: 12
+      minimum-idle: 10
+      pool-name: GuliHikariPool
+
+  servlet:
+    multipart:
+      max-file-size: 10MB
+      max-request-size: 100MB
+mybatis-plus:
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+
+upload:
+  file:
+    location: E:/JavaProjects/smart_campus-master/smart_campus-master/SchoolManagerSystem/src/main/resources/static/upload/
+
